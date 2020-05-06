@@ -19,7 +19,7 @@ public class shopgui {
      */
 
     public static void Open(Player p ){
-        Inventory inv = Bukkit.createInventory(null, 27, ChatColor.DARK_AQUA + "Clans - Upgrades");
+        Inventory inv = Bukkit.createInventory(null, 27, ChatColor.DARK_AQUA + "PToken Shop");
 
         ItemStack[] Slots = new ItemStack[27];
 
@@ -43,7 +43,7 @@ public class shopgui {
         ComingSoon_meta.setDisplayName(ChatColor.AQUA + "ComingSoon");
         ComingSoon.setItemMeta(ComingSoon_meta);
 
-        ItemStack MythicalCrate = new ItemStack(Material.BEDROCK,1);
+        ItemStack MythicalCrate = new ItemStack(Material.ENDER_CHEST,1);
         ItemMeta MythicalCrate_meta = MythicalCrate.getItemMeta();
         lore = new ArrayList<String>();
         lore.add(ChatColor.DARK_AQUA + "Click To Me Buy a Mythical Crate!");
@@ -53,7 +53,7 @@ public class shopgui {
         MythicalCrate_meta.setDisplayName(ChatColor.AQUA + "Mythical Crate");
         MythicalCrate.setItemMeta(MythicalCrate_meta);
 
-        ItemStack DragonBomb = new ItemStack(Material.BEDROCK,1);
+        ItemStack DragonBomb = new ItemStack(Material.DRAGONS_BREATH,1);
         ItemMeta DragonBomb_meta = DragonBomb.getItemMeta();
         lore = new ArrayList<String>();
         lore.add(ChatColor.DARK_AQUA + "Click To Me Buy a Dragon Bomb!");
