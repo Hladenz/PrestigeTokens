@@ -89,5 +89,11 @@
             <artifactId>VaultAPI</artifactId>
             <version>1.7</version>
         </dependency>
+        <dependency>
+            <groupId>com.vk2gp</groupId>
+            <artifactId>TokenEnchant</artifactId>
+            <scope>system</scope>
+            <systemPath>C:/Users/willm/Music/Server/apis/TokenEnchant-15.2.1.jar</systemPath>
+        </dependency>
     </dependencies>
 </project>

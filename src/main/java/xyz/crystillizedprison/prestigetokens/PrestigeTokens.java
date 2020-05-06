@@ -1,7 +1,10 @@
 package xyz.crystillizedprison.prestigetokens;
 
+import com.vk2gpz.tokenenchant.TokenEnchant;
 import net.milkbowl.vault.economy.Economy;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 import xyz.crystillizedprison.prestigetokens.AbilitiesHandler.DoubleSell;
@@ -19,6 +22,12 @@ import java.util.List;
 public final class PrestigeTokens extends JavaPlugin {
 
     private TokenConfig tokenconfig = new TokenConfig();
+
+    private TokenEnchant te;
+
+    public TokenEnchant getTe() {
+        return te;
+    }
 
     private static Economy econ = null;
 
@@ -42,6 +51,14 @@ public final class PrestigeTokens extends JavaPlugin {
 
     public List<Player> getPftoggle() {
         return pftoggle;
+    }
+
+    public TokenEnchant getTokenEnchant() {
+        Plugin plugin = Bukkit.getServer().getPluginManager().getPlugin("TokenEnchant");
+        if ((plugin == null)) {
+            return null;
+        }
+        return (com.vk2gpz.tokenenchant.TokenEnchant)plugin;
     }
 
     @Override
@@ -69,7 +86,7 @@ public final class PrestigeTokens extends JavaPlugin {
         getCommand("batchopen").setExecutor(new batchopen(this));
         getCommand("pftoggle").setExecutor(new pftoggle(this));
 
-
+        te = getTokenEnchant();
     }
 
     @Override

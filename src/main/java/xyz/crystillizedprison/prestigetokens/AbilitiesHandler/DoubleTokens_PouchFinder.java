@@ -69,18 +69,16 @@ public class DoubleTokens_PouchFinder implements CommandExecutor {
 
         if (DoubleTokens != 0){
             if (getChance(16 + ((DoubleTokens-1)*4 ) )){
-                ConsoleCommandSender console = Bukkit.getServer().getConsoleSender();
-                Bukkit.dispatchCommand(console, "te givetokens " + p.getName() + " 2");
+                Main.getTe().setTokens(p,Main.getTe().getTokens(p)+2);
             }else if (getChance(3 + ((DoubleTokens-1)*2 ) )  && DoubleTokens >= 13){
-                ConsoleCommandSender console = Bukkit.getServer().getConsoleSender();
-                Bukkit.dispatchCommand(console, "te givetokens " + p.getName() + " 3");
+                Main.getTe().setTokens(p,Main.getTe().getTokens(p)+3);
+
             }else{
-                ConsoleCommandSender console = Bukkit.getServer().getConsoleSender();
-                Bukkit.dispatchCommand(console, "te givetokens " + p.getName() + " 1");
+                Main.getTe().setTokens(p,Main.getTe().getTokens(p)+1);
             }
         }else{
-            ConsoleCommandSender console = Bukkit.getServer().getConsoleSender();
-            Bukkit.dispatchCommand(console, "te givetokens " + p.getName() + " 1");
+            Main.getTe().setTokens(p,Main.getTe().getTokens(p)+1);
+
         }
 
         return false;
