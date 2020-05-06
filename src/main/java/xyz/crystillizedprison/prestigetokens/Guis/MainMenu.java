@@ -61,7 +61,7 @@ public class MainMenu {
         ItemMeta ItemShop_Meta =  ItemShop.getItemMeta();
         ItemShop_Meta.setDisplayName(ChatColor.AQUA + "Item Shop");
         ArrayList<String> lore = new ArrayList<String>();
-        lore.add(ChatColor.YELLOW + "" + ChatColor.BOLD + "COMING SOON");
+        lore.add(ChatColor.DARK_AQUA  + "Buy Items with Ptokens");
         ItemShop_Meta.setLore(lore);
         ItemShop.setItemMeta(ItemShop_Meta);
 

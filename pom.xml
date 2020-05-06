@@ -92,6 +92,7 @@
         <dependency>
             <groupId>com.vk2gp</groupId>
             <artifactId>TokenEnchant</artifactId>
+            <version>15.2.1</version>
             <scope>system</scope>
             <systemPath>C:/Users/willm/Music/Server/apis/TokenEnchant-15.2.1.jar</systemPath>
         </dependency>
