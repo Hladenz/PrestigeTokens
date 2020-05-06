@@ -1,0 +1,16 @@
+name: ptokens
+version: ${project.version}
+main: xyz.crystillizedprison.prestigetokens.PrestigeTokens
+depend: [AutoSell]
+authors: [Hladenz]
+description: Prestige Tokens Plugin For Crp
+website: Crystillizedprison.xyz / Twitch.tv/Hladenz
+commands:
+  ptokens:
+    description: Open Shop menu for Ptokens
+  Blockreward:
+    description: Gets ran every 100 blocks
+  batchopen:
+    description: opens all the common You would want
+  pftoggle:
+    description: toggle pouch finder notications
