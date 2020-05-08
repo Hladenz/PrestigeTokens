@@ -14,3 +14,5 @@ commands:
     description: opens all the common You would want
   pftoggle:
     description: toggle pouch finder notications
+  tokenbooster:
+    description: give people more tokens

@@ -29,6 +29,8 @@ public final class PrestigeTokens extends JavaPlugin {
         return te;
     }
 
+    private TokenBooster tokenBooster = new TokenBooster(this);
+
     private static Economy econ = null;
 
     public static Economy getEcon() {
@@ -61,6 +63,10 @@ public final class PrestigeTokens extends JavaPlugin {
         return (com.vk2gpz.tokenenchant.TokenEnchant)plugin;
     }
 
+    public TokenBooster getTokenBooster() {
+        return tokenBooster;
+    }
+
     @Override
     public void onEnable() {
         // Plugin startup logic
@@ -85,6 +91,8 @@ public final class PrestigeTokens extends JavaPlugin {
         getCommand("Blockreward").setExecutor(new DoubleTokens_PouchFinder(this));
         getCommand("batchopen").setExecutor(new batchopen(this));
         getCommand("pftoggle").setExecutor(new pftoggle(this));
+
+        tokenBooster.Setup();
 
         te = getTokenEnchant();
     }

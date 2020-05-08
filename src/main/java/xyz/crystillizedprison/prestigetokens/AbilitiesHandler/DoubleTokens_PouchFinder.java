@@ -69,12 +69,12 @@ public class DoubleTokens_PouchFinder implements CommandExecutor {
 
         if (DoubleTokens != 0){
             if (getChance(16 + ((DoubleTokens-1)*4 ) )){
-                Main.getTe().setTokens(p,Main.getTe().getTokens(p)+2);
+                Main.getTe().setTokens(p,Main.getTe().getTokens(p)+Main.getTokenBooster().GetBooster(2,p));
             }else if (getChance(3 + ((DoubleTokens-1)*2 ) )  && DoubleTokens >= 13){
-                Main.getTe().setTokens(p,Main.getTe().getTokens(p)+3);
+                Main.getTe().setTokens(p,Main.getTe().getTokens(p)+Main.getTe().getTokens(p)+Main.getTokenBooster().GetBooster(3,p));
 
             }else{
-                Main.getTe().setTokens(p,Main.getTe().getTokens(p)+1);
+                Main.getTe().setTokens(p,Main.getTe().getTokens(p)+Main.getTe().getTokens(p)+Main.getTokenBooster().GetBooster(1,p));
             }
         }else{
             Main.getTe().setTokens(p,Main.getTe().getTokens(p)+1);
