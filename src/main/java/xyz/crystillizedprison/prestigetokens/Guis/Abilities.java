@@ -25,12 +25,12 @@ public class Abilities {
         ItemStack[] Slots = new ItemStack[27];
 
 
-        ItemStack Blue = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 11);
+        ItemStack Blue = new ItemStack(Material.BLUE_STAINED_GLASS_PANE, 1, (short) 11);
         ItemMeta Blue_Meta = Blue.getItemMeta();
         Blue_Meta.setDisplayName("");
         Blue.setItemMeta(Blue_Meta);
 
-        ItemStack LBlue = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 3);
+        ItemStack LBlue = new ItemStack(Material.LIGHT_BLUE_STAINED_GLASS_PANE, 1, (short) 3);
         ItemMeta LBlue_Meta = Blue.getItemMeta();
         LBlue_Meta.setDisplayName("");
         Blue.setItemMeta(LBlue_Meta);

@@ -120,7 +120,7 @@ public class ptokens implements CommandExecutor {
                         return true;
                     }
 
-                    ItemStack item = new ItemStack(Material.DOUBLE_PLANT);
+                    ItemStack item = new ItemStack(Material.SUNFLOWER);
                     ItemMeta meta = item.getItemMeta();
                     meta.setDisplayName(ChatColor.DARK_AQUA+"PTOKEN RESET");
                     List<String> lore = new ArrayList<>();

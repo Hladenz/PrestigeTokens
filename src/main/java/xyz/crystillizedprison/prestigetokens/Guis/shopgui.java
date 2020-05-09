@@ -24,12 +24,12 @@ public class shopgui {
         ItemStack[] Slots = new ItemStack[27];
 
 
-        ItemStack Blue = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 11);
+        ItemStack Blue = new ItemStack(Material.BLUE_STAINED_GLASS_PANE, 1, (short) 11);
         ItemMeta Blue_Meta = Blue.getItemMeta();
         Blue_Meta.setDisplayName("");
         Blue.setItemMeta(Blue_Meta);
 
-        ItemStack LBlue = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 3);
+        ItemStack LBlue = new ItemStack(Material.LIGHT_BLUE_STAINED_GLASS_PANE, 1, (short) 3);
         ItemMeta LBlue_Meta = Blue.getItemMeta();
         LBlue_Meta.setDisplayName("");
         Blue.setItemMeta(LBlue_Meta);
@@ -53,7 +53,7 @@ public class shopgui {
         MythicalCrate_meta.setDisplayName(ChatColor.AQUA + "Mythical Crate");
         MythicalCrate.setItemMeta(MythicalCrate_meta);
 
-        ItemStack DragonBomb = new ItemStack(Material.DRAGONS_BREATH,1);
+        ItemStack DragonBomb = new ItemStack(Material.DRAGON_BREATH,1);
         ItemMeta DragonBomb_meta = DragonBomb.getItemMeta();
         lore = new ArrayList<String>();
         lore.add(ChatColor.DARK_AQUA + "Click To Me Buy a Dragon Bomb!");

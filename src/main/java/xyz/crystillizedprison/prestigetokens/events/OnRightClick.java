@@ -21,7 +21,7 @@ public class OnRightClick implements Listener {
     public void onPlayerInteract(PlayerInteractEvent event) {
 
 
-        if (event.getPlayer().getInventory().getItemInMainHand().getType().equals(Material.DOUBLE_PLANT)){
+        if (event.getPlayer().getInventory().getItemInMainHand().getType().equals(Material.SUNFLOWER)){
             if (event.getPlayer().getInventory().getItemInMainHand().getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA+"PTOKEN RESET")){
                 Player p = event.getPlayer();
                 int total = Main.GetPlayerDoubleSell(p) + Main.GetPlayerDoubleTokens(p) + Main.GetPlayerPouchFinder(p);

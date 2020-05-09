@@ -40,7 +40,6 @@ public class DoubleTokens_PouchFinder implements CommandExecutor {
         Player p = Bukkit.getPlayer(args[0]);
         int DoubleTokens = Main.GetPlayerDoubleTokens(p);
         int PouchFinder = Main.GetPlayerPouchFinder(p);
-        System.out.println("Played Mined 100 blocks p:" + p.getName() + " DT:" + DoubleTokens + " PFf" +PouchFinder);
         if (PouchFinder != 0){
             if (getChance(2 + ((PouchFinder-1)*1 ) )){
             //COMMON
@@ -77,7 +76,7 @@ public class DoubleTokens_PouchFinder implements CommandExecutor {
                 Main.getTe().setTokens(p,Main.getTe().getTokens(p)+Main.getTe().getTokens(p)+Main.getTokenBooster().GetBooster(1,p));
             }
         }else{
-            Main.getTe().setTokens(p,Main.getTe().getTokens(p)+1);
+            Main.getTe().setTokens(p,Main.getTe().getTokens(p)+Main.getTokenBooster().GetBooster(1,p));
 
         }
 

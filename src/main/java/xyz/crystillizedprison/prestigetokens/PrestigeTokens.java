@@ -12,6 +12,7 @@ import xyz.crystillizedprison.prestigetokens.AbilitiesHandler.DoubleTokens_Pouch
 import xyz.crystillizedprison.prestigetokens.Commands.batchopen;
 import xyz.crystillizedprison.prestigetokens.Commands.pftoggle;
 import xyz.crystillizedprison.prestigetokens.Commands.ptokens;
+import xyz.crystillizedprison.prestigetokens.Commands.tokenbooster;
 import xyz.crystillizedprison.prestigetokens.ConfigFiles.TokenConfig;
 import xyz.crystillizedprison.prestigetokens.events.InventoryManger;
 import xyz.crystillizedprison.prestigetokens.events.OnRightClick;
@@ -91,6 +92,7 @@ public final class PrestigeTokens extends JavaPlugin {
         getCommand("Blockreward").setExecutor(new DoubleTokens_PouchFinder(this));
         getCommand("batchopen").setExecutor(new batchopen(this));
         getCommand("pftoggle").setExecutor(new pftoggle(this));
+        getCommand("tokenbooster").setExecutor(new tokenbooster(this));
 
         tokenBooster.Setup();
 

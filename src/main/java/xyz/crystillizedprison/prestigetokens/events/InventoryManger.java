@@ -77,7 +77,7 @@ public class InventoryManger implements Listener {
                     p.sendMessage(ChatColor.DARK_AQUA + "You Don't Have Enough ptokens!");
                 }
 
-            }else if (event.getCurrentItem().getType().equals(Material.DRAGONS_BREATH)){
+            }else if (event.getCurrentItem().getType().equals(Material.DRAGON_BREATH)){
 
                 if (Main.GetPlayerTokens(p) > 2){
                     Main.SetPlayerTokens(p,Main.GetPlayerTokens(p)-2);
