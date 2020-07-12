@@ -6,6 +6,8 @@ import org.bukkit.ChatColor;
 import org.bukkit.Statistic;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
+import xyz.crystallizedprison.petssystem.Pet;
+import xyz.crystallizedprison.petssystem.PetsSystem;
 import xyz.crystillizedprison.prestigetokens.ConfigFiles.Booster;
 
 import java.text.SimpleDateFormat;
@@ -18,6 +20,7 @@ public class TokenBooster {
     }
 
     PrestigeTokens main;
+    PetsSystem pets;
 
     private Booster config = new Booster();
 
@@ -29,7 +32,11 @@ public class TokenBooster {
 
         loop();
 
+        pets = main.getPets();
+
     }
+
+
 
     private void loop(){
         Bukkit.getScheduler().scheduleSyncRepeatingTask(main, new Runnable() {
@@ -37,13 +44,16 @@ public class TokenBooster {
                 if (config.get().contains("Booster")) {
                     if (config.get().getConfigurationSection("Booster").getKeys(false).size() != 0) {
                         for (String uuid : config.get().getConfigurationSection("Booster").getKeys(false)) {
-                            if (config.get().getInt("Booster." + uuid + ".required") < Bukkit.getOfflinePlayer(UUID.fromString(uuid)).getPlayer().getStatistic(Statistic.PLAY_ONE_MINUTE)) {
-                                config.get().set("Booster." + uuid, null);
 
-                                if (Bukkit.getOfflinePlayer(UUID.fromString(uuid)).getPlayer().isOnline()) {
-                                    Bukkit.getOfflinePlayer(UUID.fromString(uuid)).getPlayer().sendMessage(ChatColor.DARK_AQUA + "You Token Multi Has Ran Out");
+                            if (Bukkit.getPlayer(UUID.fromString(uuid))!=null) {
+                                if (config.get().getInt("Booster." + uuid + ".required") < Bukkit.getOfflinePlayer(UUID.fromString(uuid)).getPlayer().getStatistic(Statistic.PLAY_ONE_MINUTE)) {
+                                    config.get().set("Booster." + uuid, null);
+
+                                    if (Bukkit.getOfflinePlayer(UUID.fromString(uuid)).getPlayer().isOnline()) {
+                                        Bukkit.getOfflinePlayer(UUID.fromString(uuid)).getPlayer().sendMessage(ChatColor.DARK_AQUA + "You Token Multi Has Ran Out");
+                                    }
+                                    config.save();
                                 }
-                                config.save();
                             }
                         }
                     }
@@ -75,11 +85,10 @@ public class TokenBooster {
     }
 
     public int GetBooster(int amount, Player p){
-        if (config.get().contains("Booster."+p.getUniqueId().toString()     )){
-            System.out.println("Got Booster");
+        if (config.get().contains("Booster."+p.getUniqueId().toString())){
+
             return amount*config.get().getInt("Booster."+p.getUniqueId().toString()+".amount");
         }else{
-            System.out.println("No Booster " + "Booster."+p.getUniqueId().toString()+"      Tags:"+config.get().getConfigurationSection("Booster").getKeys(false));
             return amount;
         }
     }

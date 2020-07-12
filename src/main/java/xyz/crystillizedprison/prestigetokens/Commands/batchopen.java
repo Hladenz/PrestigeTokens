@@ -30,7 +30,7 @@ public class batchopen implements CommandExecutor {
                     double value = 0 + (1000000 * item.getAmount() - 0) * rand.nextDouble();
                     main.getEcon().depositPlayer(p, value);
                     p.getInventory().removeItem(item);
-                    p.sendMessage(ChatColor.DARK_AQUA + "You Batch opened "+ ChatColor.AQUA + "x" + item.getAmount()+" Pouches at got " + ChatColor.AQUA + main.getEcon().format(value));
+                    p.sendMessage(ChatColor.DARK_AQUA + "You Batch opened "+ ChatColor.AQUA + "x" + item.getAmount()+ ChatColor.DARK_AQUA+" Pouches and got " + ChatColor.AQUA + main.getEcon().format(value));
                 }
             }
         }

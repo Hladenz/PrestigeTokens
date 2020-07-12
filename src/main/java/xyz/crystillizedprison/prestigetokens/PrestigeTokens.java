@@ -7,7 +7,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
+import xyz.crystallizedprison.petssystem.PetsSystem;
 import xyz.crystillizedprison.prestigetokens.AbilitiesHandler.DoubleSell;
+import xyz.crystillizedprison.prestigetokens.AbilitiesHandler.DoubleSell_Autosell;
 import xyz.crystillizedprison.prestigetokens.AbilitiesHandler.DoubleTokens_PouchFinder;
 import xyz.crystillizedprison.prestigetokens.Commands.batchopen;
 import xyz.crystillizedprison.prestigetokens.Commands.pftoggle;
@@ -64,6 +66,14 @@ public final class PrestigeTokens extends JavaPlugin {
         return (com.vk2gpz.tokenenchant.TokenEnchant)plugin;
     }
 
+    public PetsSystem getPets() {
+        Plugin plugin = Bukkit.getServer().getPluginManager().getPlugin("PetsSystem");
+        if ((plugin == null)) {
+            return null;
+        }
+        return (xyz.crystallizedprison.petssystem.PetsSystem)plugin;
+    }
+
     public TokenBooster getTokenBooster() {
         return tokenBooster;
     }
@@ -87,6 +97,7 @@ public final class PrestigeTokens extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new InventoryManger(this),this);
         getServer().getPluginManager().registerEvents(new DoubleSell(this),this);
         getServer().getPluginManager().registerEvents(new OnRightClick(this),this);
+        getServer().getPluginManager().registerEvents(new DoubleSell_Autosell(this),this);
 
         getCommand("ptokens").setExecutor(new ptokens(this));
         getCommand("Blockreward").setExecutor(new DoubleTokens_PouchFinder(this));

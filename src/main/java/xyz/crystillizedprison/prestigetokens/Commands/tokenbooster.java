@@ -39,7 +39,28 @@ public class tokenbooster implements CommandExecutor {
                     }
                     main.getTokenBooster().GiveBooster(Bukkit.getPlayer(args[1]),Integer.valueOf(args[2]),Integer.valueOf(args[3]));
                     p.sendMessage(ChatColor.DARK_AQUA+ "Multi Has been Given");
-                    Bukkit.getPlayer(args[1]).sendMessage(ChatColor.AQUA+"You Have been given a " + args[2]+ "x Booster for " + Integer.valueOf(args[3])/20 + "mins");
+                    Bukkit.getPlayer(args[1]).sendMessage(ChatColor.AQUA+"You Have been given a " + args[2]+ "x Token Booster for " + Math.floor((Integer.valueOf(args[3]))/60) + "mins");
+
+                }
+            }
+        }else{
+            if (args.length == 0) {
+
+            }else{
+                if (args[0].toLowerCase().equals("give")){
+
+                    if (args.length < 4){
+                        System.out.println(ChatColor.DARK_AQUA+"Invalid Format! /tokenbooster give <player> <amount> <time>");
+                        return true;
+                    }
+
+                    if (Bukkit.getPlayer(args[1]) == null){
+                        System.out.println(ChatColor.DARK_AQUA+"Invalid Player!");
+                        return true;
+                    }
+                    main.getTokenBooster().GiveBooster(Bukkit.getPlayer(args[1]),Integer.valueOf(args[2]),Integer.valueOf(args[3]));
+                    System.out.println(ChatColor.DARK_AQUA+ "Multi Has been Given");
+                    Bukkit.getPlayer(args[1]).sendMessage(ChatColor.AQUA+"You Have been given a " + args[2]+ "x Token Booster for " + Math.floor((Integer.valueOf(args[3]))/60) + "mins");
 
                 }
             }

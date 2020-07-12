@@ -30,7 +30,7 @@ public class OnRightClick implements Listener {
                 Main.SetPlayerDoubleTokens(p,0);
                 Main.SetPlayerTokens(p,Main.GetPlayerTokens(p)+total);
                 p.sendMessage(ChatColor.DARK_AQUA+"Your Ptokens have Been reset");
-                event.getPlayer().getInventory().getItemInMainHand().setType(Material.AIR);
+                event.getPlayer().getInventory().getItemInMainHand().setAmount(event.getPlayer().getInventory().getItemInMainHand().getAmount()-1);
             }
         }
 

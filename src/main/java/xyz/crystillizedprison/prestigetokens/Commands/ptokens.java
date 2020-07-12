@@ -170,6 +170,27 @@ public class ptokens implements CommandExecutor {
                 Main.SetPlayerTokens(Bukkit.getPlayer(args[1]), Integer.valueOf(args[2]) );
 
 
+            }else if (args[0].equals("ptreset")){
+                if (args.length  != 2){
+                    System.out.println(ChatColor.RED + "Invalid Format");
+                    return true;
+                }
+
+                if (Bukkit.getPlayer(args[1]) == null){
+                    System.out.println(ChatColor.RED + "Invalid Player");
+                    return true;
+                }
+
+                ItemStack item = new ItemStack(Material.SUNFLOWER);
+                ItemMeta meta = item.getItemMeta();
+                meta.setDisplayName(ChatColor.DARK_AQUA+"PTOKEN RESET");
+                List<String> lore = new ArrayList<>();
+                lore.add(ChatColor.AQUA + "Right Click to reset ptokens");
+                item.setItemMeta(meta);
+                Bukkit.getPlayer(args[1]).getInventory().addItem(item);
+                Bukkit.getPlayer(args[1]).sendMessage(ChatColor.DARK_AQUA+"You Have been Give a ptoken reset Token!");
+                return true;
+
             }
         }
 

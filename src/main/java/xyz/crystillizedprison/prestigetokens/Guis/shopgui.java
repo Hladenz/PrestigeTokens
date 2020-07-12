@@ -63,6 +63,26 @@ public class shopgui {
         DragonBomb_meta.setDisplayName(ChatColor.AQUA + "Dragon Bomb");
         DragonBomb.setItemMeta(DragonBomb_meta);
 
+        ItemStack RankupToken = new ItemStack(Material.PAPER,1);
+        ItemMeta RankupToken_meta = RankupToken.getItemMeta();
+        lore = new ArrayList<String>();
+        lore.add(ChatColor.DARK_AQUA + "Click To Me Buy a 8x Rankup Tokens!");
+        lore.add(ChatColor.DARK_AQUA + "COST:"+ChatColor.AQUA + "1");
+
+        RankupToken_meta.setLore(lore);
+        RankupToken_meta.setDisplayName(ChatColor.AQUA + "8x Rankup Tokens");
+        RankupToken.setItemMeta(RankupToken_meta);
+
+
+        ItemStack PetCrate = new ItemStack(Material.SLIME_SPAWN_EGG,1);
+        ItemMeta PetCrate_Meta = PetCrate.getItemMeta();
+        lore = new ArrayList<String>();
+        lore.add(ChatColor.DARK_AQUA + "Click To Me Buy a Pet Crate!");
+        lore.add(ChatColor.DARK_AQUA + "COST:"+ChatColor.AQUA + "6");
+
+        PetCrate_Meta.setLore(lore);
+        PetCrate_Meta.setDisplayName(ChatColor.AQUA + "Pet Crate");
+        PetCrate.setItemMeta(PetCrate_Meta);
 
         Slots[0] = Blue;
         Slots[1] = Blue;
@@ -77,8 +97,8 @@ public class shopgui {
         Slots[9] = Blue;
         Slots[10] = MythicalCrate;
         Slots[11] = DragonBomb;
-        Slots[12] = ComingSoon;
-        Slots[13] = ComingSoon;
+        Slots[12] = RankupToken;
+        Slots[13] = PetCrate;
         Slots[14] = ComingSoon;
         Slots[15] = ComingSoon;
         Slots[16] = ComingSoon;

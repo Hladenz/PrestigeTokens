@@ -69,9 +69,9 @@ public class InventoryManger implements Listener {
 
             if (event.getCurrentItem().getType().equals(Material.ENDER_CHEST)){
 
-                if (Main.GetPlayerTokens(p) > 4){
+                if (Main.GetPlayerTokens(p) >= 4){
                     Main.SetPlayerTokens(p,Main.GetPlayerTokens(p)-4);
-                    Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "amc give " + p.getName() +" mythical 1");
+                    Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "amc give " + p.getName() +" Mythical 1");
                     p.sendMessage(ChatColor.DARK_AQUA +"You Have Just purchased a " + ChatColor.AQUA + "Mythical Crate!");
                 }else{
                     p.sendMessage(ChatColor.DARK_AQUA + "You Don't Have Enough ptokens!");
@@ -79,10 +79,28 @@ public class InventoryManger implements Listener {
 
             }else if (event.getCurrentItem().getType().equals(Material.DRAGON_BREATH)){
 
-                if (Main.GetPlayerTokens(p) > 2){
+                if (Main.GetPlayerTokens(p) >= 2){
                     Main.SetPlayerTokens(p,Main.GetPlayerTokens(p)-2);
                     Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "bomb give " + p.getName() +" Dragon 1");
                     p.sendMessage(ChatColor.DARK_AQUA +"You Have Just purchased a " + ChatColor.AQUA + "Dragon BOMB!");
+                }else{
+                    p.sendMessage(ChatColor.DARK_AQUA + "You Don't Have Enough ptokens!");
+                }
+            }else if (event.getCurrentItem().getType().equals(Material.PAPER)){
+
+                if (Main.GetPlayerTokens(p) >= 1){
+                    Main.SetPlayerTokens(p,Main.GetPlayerTokens(p)-1);
+                    Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "rankuptoken give " + p.getName() +" 8");
+                    p.sendMessage(ChatColor.DARK_AQUA +"You Have Just purchased 8 " + ChatColor.AQUA + "Rankup Tokens!");
+                }else{
+                    p.sendMessage(ChatColor.DARK_AQUA + "You Don't Have Enough ptokens!");
+                }
+            }else if (event.getCurrentItem().getType().equals(Material.SLIME_SPAWN_EGG)){
+
+                if (Main.GetPlayerTokens(p) >= 6){
+                    Main.SetPlayerTokens(p,Main.GetPlayerTokens(p)-6);
+                    Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "amc give " + p.getName() +" Pet 1");
+                    p.sendMessage(ChatColor.DARK_AQUA +"You Have Just purchased a " + ChatColor.AQUA + "Pet Crate!");
                 }else{
                     p.sendMessage(ChatColor.DARK_AQUA + "You Don't Have Enough ptokens!");
                 }
